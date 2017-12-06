@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Main.less';
+
 class Main extends React.Component {
   constructor() {
     super();
@@ -7,7 +9,10 @@ class Main extends React.Component {
 
   render() {
     return (
-      <h1>FIFA Country Search</h1>
+      <div>
+        <h1>FIFA Country Search</h1>
+        <p className="test"></p>
+      </div>
     );
   }
 }
