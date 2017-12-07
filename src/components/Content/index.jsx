@@ -26,10 +26,10 @@ const ErrorMessage = (props) => {
             homeGoals.push(<div key={i}>{event.player} {event.time} (P)</div>);
             break;
           case 'yellow-card':
-            homeEvents.push(<div key={i}>YC {event.player} {event.time}</div>);
+            homeEvents.push(<div key={i}>{event.player} {event.time} (YC)</div>);
             break;
           case 'red-card':
-            homeEvents.push(<div key={i}>RC {event.player} {event.time}</div>);
+            homeEvents.push(<div key={i}>{event.player} {event.time} (RC)</div>);
             break;
           case 'substitution-out':
             if (!homeSubs[event.time]) {
@@ -66,10 +66,10 @@ const ErrorMessage = (props) => {
             awayGoals.push(<div key={i}>{event.player} {event.time} (P)</div>);
             break;
           case 'yellow-card':
-            awayEvents.push(<div key={i}>YC {event.player} {event.time}</div>);
+            awayEvents.push(<div key={i}>{event.player} {event.time} (YC)</div>);
             break;
           case 'red-card':
-            awayEvents.push(<div key={i}>RC {event.player} {event.time}</div>);
+            awayEvents.push(<div key={i}>{event.player} {event.time} (RC)</div>);
             break;
           case 'substitution-out':
             if (!awaySubs[event.time]) {
@@ -105,6 +105,14 @@ const ErrorMessage = (props) => {
               {awayGoals}
             </div>
           </td>
+          <td className="evetns">
+            <div className="home">
+              {homeEvents}
+            </div>
+            <div className="away">
+              {awayEvents}
+            </div>
+          </td>
         </tr>
       )
     })
@@ -117,6 +125,7 @@ const ErrorMessage = (props) => {
             <th className="date">Date</th>
             <th className="status">Status</th>
             <th className="events">Goals</th>
+            <th className="events">Events</th>
           </tr>
         </thead>
         <tbody>
