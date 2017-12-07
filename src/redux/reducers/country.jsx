@@ -12,22 +12,25 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
-  console.log('action=', action);
   switch (action.type) {
     case GET_COUNTRY_REQUEST:
       return {
         ...state,
         isLoading: true,
+        errorMessage: ''
       }
     case GET_COUNTRY_SUCCESS:
       return {
         ...state,
         isLoading: false,
+        data: action.payload,
+        errorMessage: ''
       }
     case GET_COUNTRY_FAILURE:
       return {
         ...state,
         isLoading: false,
+        errorMessage: action.payload
       }
     default:
       return state;
